@@ -1,0 +1,105 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+@import "@ionic/angular/css/palettes/dark.system.css";
+body, ion-content {
+    --background: #161616;  
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff; 
+}
+
+
+.welcome-container {
+    margin-top: 20px;
+    padding: 0 16px;
+}
+
+.welcome-container h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #ffffff;  
+}
+
+.welcome-container p {
+    font-size: 1rem;
+    color: #cccccc; 
+}
+
+.menu-list {
+    margin-top: 25px;
+}
+
+.menu-list ion-item {
+    border-radius: 8px;
+    margin: 8px 0;
+    --background: #1c1c1c; 
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu-list ion-item ion-icon {
+    font-size: 1.4rem;
+    color: #ffffff; 
+}
+
+.menu-list ion-item ion-label {
+    font-size: 1.2rem;
+    color: #ffffff; 
+}
+
+ion-footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #1c1c1c; 
+}
+
+ion-toolbar {
+    --background: #1c1c1c; 
+    --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+@media screen and (min-width: 768px) {
+    .welcome-container h1 {
+    font-size: 2.2rem;
+    }
+
+    .welcome-container p {
+    font-size: 1.2rem;
+    }
+
+    .menu-list ion-item {
+    font-size: 1.4rem;
+    }
+}

@@ -1,0 +1,28 @@
+:host {
+    ion-content {
+    --background: #161616 !important;
+    color: #ffffff;
+    }
+}
+
+.descargar-apk-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+}
+
+ion-card {
+    --background: #1c1c1e;
+    color: #ffffff;
+}
+
+ion-card-title, ion-card-subtitle {
+    color: #ffffff;
+}
+
+ion-button {
+    --background: #28a745;
+    --color: #ffffff;
+} 

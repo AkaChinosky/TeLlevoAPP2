@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" text="Volver"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Inicio Sesion</ion-title>
+  </ion-toolbar>
+</ion-header> 
+
+
+
+
+<ion-content [fullscreen]="true" color="dark" class="ion-padding">
+  <ion-header collapse="condense">
+    <ion-toolbar color="dark">
+      <ion-title size="large">Inicio de Sesión</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="login-container">
+    <ion-img src="assets/img/logo.png" class="logo"></ion-img>
+    <ion-text color="medium">
+      <h2>Bienvenido a TeLlevoAPP</h2>
+    </ion-text>
+
+    <ion-item>
+      <ion-label position="floating">Correo Electrónico</ion-label>
+      <ion-input type="email" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" required></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" (click)="onLogin()">Iniciar Sesión</ion-button>
+
+    <ion-row class="extra-options">
+      <ion-col>
+        <ion-button fill="clear" color="primary" (click)="goToRestablecerContrasena()">
+          ¿Olvidaste tu contraseña?
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="clear" color="secondary" (click)="goToUnirseViaje()">
+          Unirse a un viaje
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

@@ -1,0 +1,24 @@
+:host {
+    ion-content {
+    --background: #161616 !important;
+    color: #ffffff;
+    }
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: auto;
+}
+
+.intro-card {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+ion-card {
+    --card-background-color: #f8f9fa;
+    --card-border-radius: 8px;
+    text-align: center;
+}
