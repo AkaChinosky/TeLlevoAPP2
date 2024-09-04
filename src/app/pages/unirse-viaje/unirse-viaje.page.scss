@@ -1,0 +1,29 @@
+:host {
+    ion-content {
+    --background: #161616 !important;
+    color: #ffffff;
+    }
+}
+
+.unirse-viaje-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+ion-item {
+    color: #fff;
+    --background: #333;
+    margin-bottom: 20px;
+}
+
+ion-button {
+    --background: #4caf50;
+}
+
+ion-label {
+    color: #bbb; 
+}
+
+ion-content {
+    --background: #000; 
+}

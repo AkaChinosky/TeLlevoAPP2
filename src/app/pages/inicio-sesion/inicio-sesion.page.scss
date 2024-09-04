@@ -1,0 +1,30 @@
+:host {
+    ion-content {
+    --background: #161616 !important;
+    color: #ffffff;
+    }
+}
+
+body, ion-app, ion-content {
+    --background: #000000 !important;  
+    color: #ffffff; 
+}
+
+.login-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+ion-item {
+    margin-bottom: 20px;
+}
+
+.extra-options ion-button {
+    font-size: 0.9rem;
+}

@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" text="Volver"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Unirse a Viaje</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="dark" class="ion-padding">
+  <ion-header collapse="condense">
+    <ion-toolbar color="dark">
+      <ion-title size="large">Unirse a Viaje</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="unirse-viaje-container">
+    <ion-item>
+      <ion-label position="floating">Destino</ion-label>
+      <ion-select interface="popover" placeholder="Selecciona un destino">
+        <ion-select-option value="destino1">Destino 1</ion-select-option>
+        <ion-select-option value="destino2">Destino 2</ion-select-option>
+        <ion-select-option value="destino3">Destino 3</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Hora de Salida</ion-label>
+      <ion-select interface="popover" placeholder="Selecciona la hora de salida">
+        <ion-select-option value="18:00">18:00</ion-select-option>
+        <ion-select-option value="19:00">19:00</ion-select-option>
+        <ion-select-option value="20:00">20:00</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Costo por Persona</ion-label>
+      <ion-input type="number" readonly value="2000"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Capacidad Disponible</ion-label>
+      <ion-input type="number" readonly value="3"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" (click)="onUnirseViaje()">Unirse al Viaje</ion-button>
+  </div>
+</ion-content>

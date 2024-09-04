@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" text="Volver"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Descargar APK</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Descargar APK</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="descargar-apk-container">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Descarga la última versión de TeLlevoAPP</ion-card-title>
+        <ion-card-subtitle>Haz clic en el botón para descargar la APK.</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-button expand="block" color="success" href="/path/to/apk" download="TeLlevoAPP.apk">
+          Descargar APK
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
