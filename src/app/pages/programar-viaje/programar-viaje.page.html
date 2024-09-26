@@ -1,40 +1,65 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="dark">
+  <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/home" text="Volver"></ion-back-button>
+      <ion-back-button defaultHref="/inicio" text="Volver"></ion-back-button>
     </ion-buttons>
     <ion-title>Programar Viaje</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding" color="dark">
-  <ion-header collapse="condense">
-    <ion-toolbar color="dark">
-      <ion-title size="large">Programar Viaje</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
 
-  <div class="programar-viaje-container">
-    <ion-item>
-      <ion-label position="floating">Destino</ion-label>
-      <ion-input type="text" required></ion-input>
-    </ion-item>
+<ion-content>
+  <div id="map" style="height: 400px;"></div>
 
-    <ion-item>
-      <ion-label position="floating">Hora de Salida</ion-label>
-      <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" required></ion-datetime>
-    </ion-item>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Información del Conductor</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-avatar slot="start">
+          <img [src]="driver.photo">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{ driver.name }}</h2>
+          <p>Costo por persona: {{ driver.costPerPerson | currency:'CLP':'symbol' }}</p>
+          <p>Capacidad disponible: {{ driver.capacity }}</p>
+          <p>Ubicación actual: {{ driver.currentLocation }}</p>
+          <p>Fecha: {{ driver.date | date:'fullDate' }} {{ driver.date | date:'shortTime' }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 
-    <ion-item>
-      <ion-label position="floating">Costo por Persona</ion-label>
-      <ion-input type="number" required></ion-input>
-    </ion-item>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Pasajeros</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let passenger of passengers; let i = index">
+          <ion-avatar slot="start">
+            <img [src]="passenger.photo">
+          </ion-avatar>
+          <ion-label>
+            <h2>{{ passenger.name }}</h2>
+          </ion-label>
+          <ion-button color="danger" (click)="removePassenger(i)">
+            Marcar como bajado
+          </ion-button>
+        </ion-item>
+      </ion-list>
+      <ion-item>
+        <ion-button expand="full" (click)="addPassenger()">
+          Agregar Pasajero
+        </ion-button>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 
-    <ion-item>
-      <ion-label position="floating">Capacidad Disponible</ion-label>
-      <ion-input type="number" required></ion-input>
-    </ion-item>
-
-    <ion-button expand="block" (click)="onProgramarViaje()">Programar Viaje</ion-button>
-  </div>
+  <ion-button expand="full" (click)="onProgramarViaje()">
+    Programar Viaje
+  </ion-button>
 </ion-content>

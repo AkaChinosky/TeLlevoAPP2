@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inicio Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+=======
 <ion-header [translucent]="true">
   <ion-toolbar color="dark">
     <ion-buttons slot="start">
@@ -16,24 +23,52 @@
       <ion-title size="large">Inicio de Sesión</ion-title>
     </ion-toolbar>
   </ion-header>
+>>>>>>> 76026bb950f27f4ea486c299820204fdba665788
 
+<ion-content>
   <div class="login-container">
     <ion-img src="assets/img/logo.png" class="logo"></ion-img>
     <ion-text color="medium">
       <h2>Bienvenido a TeLlevoAPP</h2>
     </ion-text>
 
-    <ion-item>
-      <ion-label position="floating">Correo Electrónico</ion-label>
-      <ion-input type="email" required></ion-input>
-    </ion-item>
+    <form #loginForm="ngForm" (ngSubmit)="onLogin()">
+      <ion-item>
+        <ion-label position="floating">Correo Electrónico</ion-label>
+        <ion-input 
+          [(ngModel)]="email" 
+          name="email" 
+          type="email" 
+          required
+          email 
+          #emailInput="ngModel">
+        </ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="emailInput.invalid && emailInput.touched">
+        <p *ngIf="emailInput.errors?.['required']">El correo es requerido</p>
+        <p *ngIf="emailInput.errors?.['email']">El formato del correo no es válido</p>
+      </ion-text>
 
-    <ion-item>
-      <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password" required></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input 
+          [(ngModel)]="password" 
+          name="password" 
+          type="password" 
+          required
+          minlength="5"
+          #passwordInput="ngModel">
+        </ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="passwordInput.invalid && passwordInput.touched">
+        <p *ngIf="passwordInput.errors?.['required']">La contraseña es requerida</p>
+        <p *ngIf="passwordInput.errors?.['minlength']">La contraseña debe tener al menos 5 caracteres</p>
+      </ion-text>
 
-    <ion-button expand="block" (click)="onLogin()">Iniciar Sesión</ion-button>
+      <ion-button expand="block" type="submit" [disabled]="loginForm.invalid">Iniciar Sesión</ion-button>
+    </form>
+    
+    <ion-button expand="block" color="medium" routerLink="/registro">Registrar</ion-button>
 
     <ion-row class="extra-options">
       <ion-col>

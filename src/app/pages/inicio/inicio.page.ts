@@ -19,7 +19,7 @@ export class InicioPage implements OnInit {
   }
 
   goToBuscarTransporte() {
-    this.navCtrl.navigateForward('/buscar-transporte');
+    this.navCtrl.navigateForward('/unirse-viaje');
   }
 
   goToMisViajes() {
@@ -31,7 +31,7 @@ export class InicioPage implements OnInit {
   }
 
   goToHome() {
-    this.navCtrl.navigateBack('/home');
+    this.navCtrl.navigateBack('/inicio-sesion');
   } 
 
   ngOnInit() {
