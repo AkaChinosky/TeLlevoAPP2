@@ -36,9 +36,9 @@
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
 body, ion-content {
-    --background: #161616;  
+    --background: #9e2424;  
     font-family: 'Roboto', sans-serif;
-    color: #ffffff; 
+    color: #0f0202; 
 }
 
 
@@ -65,7 +65,7 @@ body, ion-content {
 .menu-list ion-item {
     border-radius: 8px;
     margin: 8px 0;
-    --background: #1c1c1c; 
+    --background: #1f22f1; 
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -79,10 +79,14 @@ body, ion-content {
     color: #ffffff; 
 }
 
+ion-label {
+    color: #ffffff; 
+}
+
 ion-footer {
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: #1c1c1c; 
+    background-color: #1310e6; 
 }
 
 ion-toolbar {
