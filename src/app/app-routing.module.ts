@@ -22,10 +22,6 @@ const routes: Routes = [
     canActivate: [AuthGuard] 
   },
   {
-    path: 'restablecer-contrasena',
-    loadChildren: () => import('./pages/restablecer-contrasena/restablecer-contrasena.module').then(m => m.RestablecerContrasenaPageModule)
-  },
-  {
     path: 'inicio',
     loadChildren: () => import('./pages/inicio/inicio.module').then(m => m.InicioPageModule),
     canActivate: [AuthGuard] 
