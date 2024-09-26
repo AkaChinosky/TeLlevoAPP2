@@ -1,13 +1,8 @@
 :host {
     ion-content {
-    --background: #161616 !important;
-    color: #ffffff;
+        --background: #161616 !important;
+        color: #ffffff;
     }
-}
-
-.unirse-viaje-container {
-    text-align: center;
-    margin-top: 20px;
 }
 
 ion-item {
@@ -21,9 +16,23 @@ ion-button {
 }
 
 ion-label {
-    color: #bbb; 
+    color: #bbb;
 }
 
 ion-content {
-    --background: #000; 
+    --background: #000;
+}
+
+.vehicle-marker {
+    font-size: 2rem;
+}
+
+ion-card {
+    margin-top: 10px;
+}
+
+#map {
+    width: 100%;
+    height: 250px;
+
 }
