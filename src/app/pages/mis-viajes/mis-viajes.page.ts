@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { ViajesService } from './../../guards/services/viajes.service';
+
 
 @Component({
   selector: 'app-mis-viajes',
