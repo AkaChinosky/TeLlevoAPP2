@@ -11,7 +11,8 @@ import { ViajesService } from './guards/services/viajes.service';
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy,  }],
+  providers: [{ provide:RouteReuseStrategy, useClass: IonicRouteStrategy, },
+    ViajesService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

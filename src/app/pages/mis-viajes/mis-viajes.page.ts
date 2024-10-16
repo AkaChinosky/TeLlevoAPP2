@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { ViajesService } from './../../guards/services/viajes.service';
-
+import { ViajesService } from '../../guards/services/viajes.service'; 
 
 @Component({
   selector: 'app-mis-viajes',
@@ -9,15 +8,12 @@ import { ViajesService } from './../../guards/services/viajes.service';
   styleUrls: ['./mis-viajes.page.scss'],
 })
 export class MisViajesPage implements OnInit {
-  viajes = [
-    { destino: 'Playa', fecha: new Date() },
-    { destino: 'Montaña', fecha: new Date() },
-  ];
+  viajes: any[] = [];
 
-  constructor(private navCtrl: NavController) {}
+  constructor(private navCtrl: NavController, private viajesService: ViajesService) {}
 
   ngOnInit() {
-    // Aquí podrías cargar los viajes desde un servicio, por ejemplo.
+    this.viajes = this.viajesService.obtenerViajes(); 
   }
 
   goToProfile() {
