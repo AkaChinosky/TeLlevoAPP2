@@ -1,6 +1,8 @@
+import { ViajesService } from './../../guards/services/viajes.service';
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import * as mapboxgl from 'mapbox-gl';
+
 
 @Component({
   selector: 'app-programar-viaje',
@@ -27,7 +29,16 @@ export class ProgramarViajePage implements OnInit {
     date: new Date()
   };
 
-  constructor(private navCtrl: NavController) {}
+  driver1 = {
+    name: 'Tay Kila',
+    photo: '/TeLlevoAPP/src/assets/img/mauri.png',
+    costPerPerson: 4500,
+    capacity: 6,
+    currentLocation: '',
+    date: new Date()
+  };
+
+  constructor(private navCtrl: NavController , private viajesService: ViajesService) {}
 
   ngOnInit() {
     this.initializeMap();
@@ -135,7 +146,15 @@ export class ProgramarViajePage implements OnInit {
   }
 
   onProgramarViaje() {
-    console.log('Viaje programado con los siguientes datos:', this.passengers, this.driver);
-    this.navCtrl.navigateForward('/inicio');
+    const viaje = {
+      pasajeros: this.passengers,
+      conductor: this.driver,
+      destino: this.selectedDestination,
+      fecha: new Date(),
+    };
+    
+    this.viajesService.agregarViaje(viaje); // Agregar el viaje al servicio
+    console.log('Viaje programado con los siguientes datos:', viaje);
+    this.navCtrl.navigateForward('/mis-viajes'); // Redirigir a Mis Viajes
   }
 }

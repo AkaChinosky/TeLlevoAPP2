@@ -35,6 +35,26 @@
 
   <ion-card>
     <ion-card-header>
+      <ion-card-title>Información del Conductor</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-avatar slot="start">
+          <img [src]="driver.photo">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{ driver1.name }}</h2>
+          <p>Costo por persona: {{ driver1.costPerPerson | currency:'CLP':'symbol' }}</p>
+          <p>Capacidad disponible: {{ driver1.capacity }}</p>
+          <p>Ubicación actual: {{ driver1.currentLocation }}</p>
+          <p>Fecha: {{ driver1.date | date:'fullDate' }} {{ driver1.date | date:'shortTime' }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
       <ion-card-title>Pasajeros</ion-card-title>
     </ion-card-header>
     <ion-card-content>
