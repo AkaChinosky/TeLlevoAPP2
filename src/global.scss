@@ -107,3 +107,14 @@ ion-toolbar {
     font-size: 1.4rem;
     }
 }
+
+:root {
+    --ion-background-color: #ffffff; /* Color de fondo claro */
+    --ion-text-color: #000000; /* Color de texto claro */
+  }
+  
+  .dark {
+    --ion-background-color: #000000; /* Color de fondo oscuro */
+    --ion-text-color: #ffffff; /* Color de texto claro */
+  }
+  
